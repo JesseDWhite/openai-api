@@ -3,6 +3,10 @@ import random
 import openai
 import json
 import os
+from pydantic import BaseModel
+
+class Request(BaseModel):
+    payload: str
 
 CHAT_KEY = os.environ.get('CHAT_KEY')
 openai.api_key = CHAT_KEY 
@@ -15,7 +19,7 @@ async def root():
 
 
 @app.post('/chat/{payload}')
-async def chat(payload: str):
+async def chat(payload: Request):
     response = openai.ChatCompletion.create(
       model="gpt-3.5-turbo",
       messages=[
