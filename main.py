@@ -14,12 +14,12 @@ async def root():
     return {"welcome": "this is the main page"}
 
 
-@app.get('/chat/{name}')
-async def chat(name: str):
+@app.post('/chat/{payload}')
+async def chat(payload: str):
     response = openai.ChatCompletion.create(
       model="gpt-3.5-turbo",
       messages=[
-        {"role": "user", "content": f'Hey there, my name is {name}.'}
+        {"role": "user", "content": payload}
       ]
     )
     return response.choices[0].message.content
