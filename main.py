@@ -8,7 +8,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 origins = [
     "http://localhost:3000",
-    "https://job-tracker-2b6b1--alpha-preview-ipt58qtt.web.app"
+    "https://job-tracker-2b6b1--alpha-preview-ipt58qtt.web.app",
+    "https://job-tracker-2b6b1--alpha-preview-ipt58qtt.web.app/?fbclid=IwAR1mJqo_jBE2a-KvyMAmhtfRbd_HiMzRn5ikev7A2dmOv2EJlLbHjjYptT4"
 ]
 
 
